@@ -4,9 +4,6 @@ Feature: Auto-destruct
   In order to impress my friends
 
   Scenario:
-    Given I have attached electrodes
-    And wired them up to electrickery
-    When I flip the switch
-    Then I should see pretty light
-    And I should hear a sizzle
-    And something should smell weird
+    Given I have wired up my subject
+    When I supply electrickery
+    Then I should see a pretty light

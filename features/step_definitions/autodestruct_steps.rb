@@ -1,21 +1,16 @@
-Given /^I have attached electrodes$/ do
+Given /^I have wired up my subject$/ do
+  @sizzle = Cucumber::Autodestruct.new
+  sleep 2
 end
 
-Given /^wired them up to electrickery$/ do
+When /^I supply electrickery$/ do
+  @sizzle.start!
 end
 
-When /^I flip the switch$/ do
-  # Talk to the arduino and activate relay
-  pending
-end
-
-Then /^I should see pretty light$/ do
-  # Talk to the Arduino and get a light reading
-  pending
-end
-
-Then /^I should hear a sizzle$/ do
-end
-
-Then /^something should smell weird$/ do
+Then /^I should see a pretty light$/ do
+  5.times do
+    puts "Light level: #{@sizzle.light_level}"
+    sleep 1
+  end
+  @sizzle.stop!
 end
